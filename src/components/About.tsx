@@ -1,4 +1,4 @@
-import { Code, Server, Database, Users, Cloud, GitBranch } from 'lucide-react';
+import { Code, Layers, Zap, Users } from 'lucide-react';
 
 export default function About() {
   return (
@@ -9,117 +9,101 @@ export default function About() {
             <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-4">
               About Me
             </h2>
-            <div className="w-20 h-1 bg-blue-600 dark:bg-blue-500 mx-auto mb-6"></div>
-            <p className="text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto">
-              I'm a passionate Full Stack Java Developer with expertise in
-              building enterprise applications and web solutions using modern
-              technologies and best practices.
-            </p>
+            <div className="w-20 h-1 bg-blue-600 dark:bg-blue-500 mx-auto"></div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-            <div className="bg-slate-50 dark:bg-slate-800 p-8 rounded-2xl shadow-sm">
-              <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">
-                Who I Am
-              </h3>
-              <p className="text-slate-600 dark:text-slate-400 mb-4">
-                I'm a Java Full Stack Developer with over 7+ years of experience
-                in designing, developing, and maintaining enterprise
-                applications. My journey in software development has equipped me
-                with a deep understanding of both frontend and backend
-                technologies.
-              </p>
-              <p className="text-slate-600 dark:text-slate-400">
-                I'm passionate about creating efficient, scalable, and
-                user-friendly applications that solve real-world problems. I
-                thrive in collaborative environments and enjoy the process of
-                turning complex requirements into elegant technical solutions.
-              </p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+            {/* Profile Image */}
+            <div className="flex justify-center lg:justify-start">
+              <div className="relative">
+                <div className="w-80 h-80 rounded-2xl overflow-hidden shadow-2xl">
+                  <img
+                    src="https://media.licdn.com/dms/image/v2/D4E03AQFMCUh5dYYcLg/profile-displayphoto-shrink_800_800/B4EZPavZORGcAc-/0/1734541680635?e=1778716800&v=beta&t=bgiv461SCc1AsotfkWGSBTgt0sQD8zsN0wHI8M7VTfA"
+                    alt="Ramgopal Nannapaneni"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="absolute -bottom-6 -right-6 bg-blue-600 text-white p-4 rounded-xl shadow-lg">
+                  <Code size={32} />
+                </div>
+              </div>
             </div>
 
-            <div className="bg-slate-50 dark:bg-slate-800 p-8 rounded-2xl shadow-sm">
-              <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">
-                What I Do
-              </h3>
+            {/* About Content */}
+            <div className="space-y-6">
+              <div className="space-y-4 text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p>
+                  I focus on building frontend-heavy enterprise applications that handle real-world workflows and data complexity. 
+                  My work centers around scalable UI systems, performance, and maintainability.
+                </p>
+                <p>
+                  I also have experience working with backend systems using Java and Spring Boot when needed. 
+                  Recently, I've been building AI-integrated features using LLM APIs to improve user workflows.
+                </p>
+              </div>
 
-              <div className="space-y-4">
-                <div className="flex items-start">
-                  <div className="flex-shrink-0 p-2 bg-blue-100 dark:bg-blue-900/40 rounded-lg text-blue-600 dark:text-blue-400 mr-4">
-                    <Code size={20} />
-                  </div>
-                  <div>
-                    <h4 className="font-medium text-slate-900 dark:text-white">
-                      Frontend Development
-                    </h4>
-                    <p className="text-slate-600 dark:text-slate-400">
-                      Creating responsive, interactive UIs with React.js and
-                      Angular (v14, v16, v17)
-                    </p>
-                  </div>
+              {/* Key Metrics */}
+              <div className="grid grid-cols-2 gap-6 pt-6">
+                <div className="text-center p-4 bg-slate-50 dark:bg-slate-800 rounded-xl">
+                  <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">4+</div>
+                  <div className="text-sm text-slate-600 dark:text-slate-400">Years Experience</div>
                 </div>
-
-                <div className="flex items-start">
-                  <div className="flex-shrink-0 p-2 bg-blue-100 dark:bg-blue-900/40 rounded-lg text-blue-600 dark:text-blue-400 mr-4">
-                    <Server size={20} />
-                  </div>
-                  <div>
-                    <h4 className="font-medium text-slate-900 dark:text-white">
-                      Backend Development
-                    </h4>
-                    <p className="text-slate-600 dark:text-slate-400">
-                      Building robust server-side applications with Java,
-                      Spring, and JPA
-                    </p>
-                  </div>
+                <div className="text-center p-4 bg-slate-50 dark:bg-slate-800 rounded-xl">
+                  <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">10+</div>
+                  <div className="text-sm text-slate-600 dark:text-slate-400">Projects Built</div>
                 </div>
-
-                <div className="flex items-start">
-                  <div className="flex-shrink-0 p-2 bg-blue-100 dark:bg-blue-900/40 rounded-lg text-blue-600 dark:text-blue-400 mr-4">
-                    <Database size={20} />
-                  </div>
-                  <div>
-                    <h4 className="font-medium text-slate-900 dark:text-white">
-                      Database Management
-                    </h4>
-                    <p className="text-slate-600 dark:text-slate-400">
-                      Designing and optimizing database schemas with SQL and
-                      NoSQL solutions
-                    </p>
-                  </div>
+                <div className="text-center p-4 bg-slate-50 dark:bg-slate-800 rounded-xl">
+                  <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">2</div>
+                  <div className="text-sm text-slate-600 dark:text-slate-400">AI Projects</div>
                 </div>
-
-                <div className="flex items-start">
-                  <div className="flex-shrink-0 p-2 bg-blue-100 dark:bg-blue-900/40 rounded-lg text-blue-600 dark:text-blue-400 mr-4">
-                    <Cloud size={20} />
-                  </div>
-                  <div>
-                    <h4 className="font-medium text-slate-900 dark:text-white">
-                      Cloud Services
-                    </h4>
-                    <p className="text-slate-600 dark:text-slate-400">
-                      Deploying and maintaining applications on AWS cloud
-                      infrastructure
-                    </p>
-                  </div>
+                <div className="text-center p-4 bg-slate-50 dark:bg-slate-800 rounded-xl">
+                  <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">3</div>
+                  <div className="text-sm text-slate-600 dark:text-slate-400">Companies</div>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-gradient-to-br from-blue-500 to-blue-600 dark:from-blue-600 dark:to-blue-700 p-8 rounded-2xl text-white">
-              <h3 className="text-2xl font-bold mb-2">7+</h3>
-              <p className="text-blue-100">Years of Experience</p>
+          {/* What I Bring */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="text-center p-6 bg-slate-50 dark:bg-slate-800 rounded-xl">
+              <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/40 rounded-lg flex items-center justify-center mx-auto mb-4">
+                <Code className="text-blue-600 dark:text-blue-400" size={24} />
+              </div>
+              <h3 className="font-semibold text-slate-900 dark:text-white mb-2">Frontend Architecture</h3>
+              <p className="text-sm text-slate-600 dark:text-slate-400">
+                Scalable component systems and modern UI patterns
+              </p>
             </div>
 
-            <div className="bg-gradient-to-br from-blue-500 to-blue-600 dark:from-blue-600 dark:to-blue-700 p-8 rounded-2xl text-white">
-              <h3 className="text-2xl font-bold mb-2">10+</h3>
-              <p className="text-blue-100">Projects Completed</p>
+            <div className="text-center p-6 bg-slate-50 dark:bg-slate-800 rounded-xl">
+              <div className="w-12 h-12 bg-indigo-100 dark:bg-indigo-900/40 rounded-lg flex items-center justify-center mx-auto mb-4">
+                <Layers className="text-indigo-600 dark:text-indigo-400" size={24} />
+              </div>
+              <h3 className="font-semibold text-slate-900 dark:text-white mb-2">Full-Stack Integration</h3>
+              <p className="text-sm text-slate-600 dark:text-slate-400">
+                Seamless API integration and backend collaboration
+              </p>
             </div>
 
-            <div className="bg-gradient-to-br from-blue-500 to-blue-600 dark:from-blue-600 dark:to-blue-700 p-8 rounded-2xl text-white">
-              <h3 className="text-2xl font-bold mb-2">3+</h3>
-              <p className="text-blue-100">Satisfied Clients</p>
+            <div className="text-center p-6 bg-slate-50 dark:bg-slate-800 rounded-xl">
+              <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900/40 rounded-lg flex items-center justify-center mx-auto mb-4">
+                <Zap className="text-purple-600 dark:text-purple-400" size={24} />
+              </div>
+              <h3 className="font-semibold text-slate-900 dark:text-white mb-2">AI Integration</h3>
+              <p className="text-sm text-slate-600 dark:text-slate-400">
+                LLM-powered features and intelligent user experiences
+              </p>
+            </div>
+
+            <div className="text-center p-6 bg-slate-50 dark:bg-slate-800 rounded-xl">
+              <div className="w-12 h-12 bg-green-100 dark:bg-green-900/40 rounded-lg flex items-center justify-center mx-auto mb-4">
+                <Users className="text-green-600 dark:text-green-400" size={24} />
+              </div>
+              <h3 className="font-semibold text-slate-900 dark:text-white mb-2">Product Thinking</h3>
+              <p className="text-sm text-slate-600 dark:text-slate-400">
+                User-focused solutions for enterprise workflows
+              </p>
             </div>
           </div>
         </div>

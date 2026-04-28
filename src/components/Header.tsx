@@ -13,6 +13,7 @@ const navLinks: NavLink[] = [
   { name: 'Skills', href: '#skills' },
   { name: 'Projects', href: '#projects' },
   { name: 'Experience', href: '#experience' },
+  { name: 'Insights', href: '#insights' },
   { name: 'Contact', href: '#contact' },
 ];
 
@@ -46,7 +47,7 @@ export default function Header() {
         <div className="flex items-center justify-between">
           <div className="text-2xl font-bold text-slate-900 dark:text-white">
             <a href="#home" className="flex items-center">
-              <span className="text-blue-600 dark:text-blue-400">J</span>avaDev
+              <span className="text-blue-600 dark:text-blue-400">R</span>amgopal
             </a>
           </div>
 

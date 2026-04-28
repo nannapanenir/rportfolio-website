@@ -1,0 +1,49 @@
+PORTFOLIO EXPORT INSTRUCTIONS
+================================
+
+Your redesigned portfolio is ready for GitHub! Here's what you need to do:
+
+1. DOWNLOAD THESE FILES:
+   - All files in the src/ folder
+   - index.html
+   - package.json  
+   - tailwind.config.js
+   - vite.config.ts
+   - All other config files
+
+2. COPY TO YOUR REPOSITORY:
+   Replace the existing files in your portfolio-website repository
+
+3. UPDATE PACKAGE.JSON:
+   Make sure the homepage field points to your GitHub Pages URL:
+   "homepage": "https://nannapanenir.github.io/portfolio-website/"
+
+4. COMMIT MESSAGE TO USE:
+   "Complete portfolio redesign - Frontend Engineer positioning
+
+   - Redesigned hero section with frontend/AI engineer positioning
+   - Rewrote about section focusing on frontend expertise  
+   - Updated skills section with clean grouping (no progress bars)
+   - Added 4 featured projects with case study format
+   - Rewritten experience section emphasizing frontend engineering
+   - Added 'What I'm Exploring' insights section
+   - Modernized contact section
+   - Removed Java Full Stack Developer positioning
+   - Added AI integration as emerging specialization"
+
+5. DEPLOY COMMANDS:
+   npm install
+   npm run build
+   npm run deploy
+
+Your new portfolio will be live at:
+https://nannapanenir.github.io/portfolio-website/
+
+KEY CHANGES MADE:
+✅ Frontend Engineer positioning (not Java Full Stack)
+✅ Angular/React/TypeScript as primary skills
+✅ AI integration as emerging specialization  
+✅ Modern, recruiter-friendly design
+✅ Case study format for projects
+✅ No skill progress bars
+✅ Professional, product-company ready aesthetic

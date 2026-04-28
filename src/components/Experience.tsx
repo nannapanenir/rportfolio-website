@@ -1,264 +1,164 @@
-import { useState } from 'react';
-import { Calendar, Briefcase, GraduationCap } from 'lucide-react';
-
-interface TimelineItem {
-  id: number;
-  type: 'work' | 'education';
-  title: string;
-  company?: string;
-  institution?: string;
-  location: string;
-  date: string;
-  description: string[];
-  technologies?: string[];
-}
+import { Calendar, MapPin } from 'lucide-react';
 
 export default function Experience() {
-  const [filter, setFilter] = useState('all');
-
-  const timelineData: TimelineItem[] = [
+  const experiences = [
     {
       id: 1,
-      type: 'work',
-      title: 'Senior Full Stack Developer',
-      company: 'CSX Railroad Transportation Corp',
+      title: 'Senior Frontend Engineer',
+      company: 'CSX Transportation',
       location: 'Jacksonville, FL',
-      date: '2023 - Present',
-      description: [
-        'Lead the development of enterprise-grade applications using Java, Spring Boot, and Angular',
-        'Designed and implemented microservices architecture for scalable and maintainable systems',
-        'Mentored junior developers and conducted code reviews to ensure quality and adherence to best practices',
-        'Implemented CI/CD pipelines using Jenkins and Docker for automated testing and deployment',
+      period: '2024 - Present',
+      type: 'Full-time',
+      highlights: [
+        'Led frontend architecture for enterprise transportation management platform serving 1000+ daily users',
+        'Built responsive Angular components with TypeScript, reducing UI development time by 40%',
+        'Implemented real-time data visualization dashboards using RxJS and WebSocket integration',
+        'Collaborated with backend teams to design REST API contracts and optimize data flow',
+        'Mentored junior developers on modern frontend patterns and component architecture best practices'
       ],
-      technologies: [
-        'Java',
-        'Spring Boot',
-        'Angular',
-        'AWS',
-        'Docker',
-        'Jenkins',
-      ],
+      technologies: ['Angular', 'TypeScript', 'RxJS', 'SCSS', 'Spring Boot', 'REST APIs']
     },
     {
       id: 2,
-      type: 'work',
-      title: 'Full Stack Java Developer',
+      title: 'Frontend Engineer',
       company: 'CGI',
-      location: '',
-      date: '2021 - 2022',
-      description: [
-        'Developed and maintained RESTful APIs using Spring Boot and Hibernate',
-        'Built responsive front-end interfaces with React.js and Angular',
-        'Collaborated with UX/UI designers to implement intuitive user interfaces',
-        'Optimized database queries and implemented caching strategies for improved performance',
+      location: 'Remote',
+      period: '2021 - 2022',
+      type: 'Full-time',
+      highlights: [
+        'Developed enterprise UI components using React and Angular for multiple client projects',
+        'Implemented responsive designs and cross-browser compatibility for business-critical applications',
+        'Integrated frontend applications with Java/Spring Boot microservices and REST APIs',
+        'Optimized application performance through code splitting, lazy loading, and efficient state management',
+        'Participated in Agile development processes and collaborated with UX/UI design teams'
       ],
-      technologies: [
-        'Java',
-        'Spring',
-        'Hibernate',
-        'React',
-        'Angular',
-        'MySQL',
-      ],
+      technologies: ['React', 'Angular', 'JavaScript', 'TypeScript', 'Java', 'Spring Boot']
     },
     {
       id: 3,
-      type: 'education',
-      title: 'Master of Science in Information Systems',
-      institution: 'South Dakota State University',
-      location: 'Madison, SD',
-      date: '2022 - 2023',
-      description: [
-        'Specialized in Software Engineering and Database Management',
-        'Thesis: "Optimizing Microservices Communication in Distributed Systems"',
-        'Relevant coursework: Advanced Algorithms, Cloud Computing, Database Systems, Machine Learning',
+      title: 'Software Engineer',
+      company: 'Cognizant Technology Solutions',
+      location: 'Hyderabad, India',
+      period: '2019 - 2021',
+      type: 'Full-time',
+      highlights: [
+        'Built frontend interfaces for enterprise applications using JavaScript, HTML5, and CSS3',
+        'Developed reusable UI components and maintained component libraries for team efficiency',
+        'Worked on full-stack features integrating frontend with Java backend services',
+        'Implemented responsive web designs and ensured accessibility compliance',
+        'Contributed to code reviews and maintained high code quality standards'
       ],
-    },
-    {
-      id: 4,
-      type: 'work',
-      title: 'Junior Java Developer',
-      company: 'Cognizant Technology Private Limited ',
-      location: 'Hyderbad In',
-      date: '2018 - 2021',
-      description: [
-        'Developed and maintained Java-based web applications',
-        'Implemented front-end components using JavaScript and jQuery',
-        'Participated in Agile development processes including daily standups and sprint planning',
-        'Conducted unit and integration testing to ensure software quality',
-      ],
-      technologies: ['Java', 'JavaScript', 'jQuery', 'Tomcat', 'Oracle DB'],
-    },
-    {
-      id: 5,
-      type: 'education',
-      title: 'Bachelor of Science in Computer Engineering',
-      institution: 'GIET University',
-      location: 'Hyderabad, IN',
-      date: '2014 - 2018',
-      description: [
-        'GPA: 3.8/4.0',
-        'Relevant coursework: Data Structures, Algorithms, Operating Systems, Database Management',
-        'Senior Project: "Web-based Classroom Management System"',
-      ],
-    },
+      technologies: ['JavaScript', 'HTML5', 'CSS3', 'Java', 'jQuery', 'Bootstrap']
+    }
   ];
-
-  const filteredTimeline =
-    filter === 'all'
-      ? timelineData
-      : timelineData.filter((item) => item.type === filter);
 
   return (
     <section id="experience" className="py-24 bg-slate-50 dark:bg-slate-800">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-4">
-              Experience & Education
+              Experience Highlights
             </h2>
             <div className="w-20 h-1 bg-blue-600 dark:bg-blue-500 mx-auto mb-6"></div>
             <p className="text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto">
-              My professional journey and educational background that have
-              shaped my skills and expertise.
+              5+ years of frontend engineering experience building scalable enterprise applications 
+              and collaborating across full-stack development teams.
             </p>
           </div>
 
-          <div className="flex justify-center mb-12">
-            <div className="inline-flex bg-white dark:bg-slate-700 p-1 rounded-lg shadow-sm">
-              <button
-                onClick={() => setFilter('all')}
-                className={`px-5 py-2 rounded-md font-medium transition-colors ${
-                  filter === 'all'
-                    ? 'bg-blue-600 text-white'
-                    : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-600'
-                }`}
+          <div className="space-y-8">
+            {experiences.map((exp, index) => (
+              <div
+                key={exp.id}
+                className="bg-white dark:bg-slate-900 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300"
               >
-                All
-              </button>
-              <button
-                onClick={() => setFilter('work')}
-                className={`px-5 py-2 rounded-md font-medium transition-colors ${
-                  filter === 'work'
-                    ? 'bg-blue-600 text-white'
-                    : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-600'
-                }`}
-              >
-                Work
-              </button>
-              <button
-                onClick={() => setFilter('education')}
-                className={`px-5 py-2 rounded-md font-medium transition-colors ${
-                  filter === 'education'
-                    ? 'bg-blue-600 text-white'
-                    : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-600'
-                }`}
-              >
-                Education
-              </button>
-            </div>
-          </div>
-
-          <div className="relative">
-            {/* Timeline line */}
-            <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-blue-200 dark:bg-blue-900"></div>
-
-            {filteredTimeline.map((item, index) => (
-              <div key={item.id} className="mb-12 md:mb-0 relative">
-                <div
-                  className={`flex flex-col md:flex-row items-center md:justify-between ${
-                    index % 2 === 0 ? 'md:flex-row-reverse' : ''
-                  }`}
-                >
-                  {/* Timeline dot */}
-                  <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-blue-600 dark:bg-blue-500 z-10"></div>
-
-                  {/* Date section (mobile only) */}
-                  <div className="md:hidden mb-4 flex items-center justify-center w-full">
-                    <div className="bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400 px-4 py-2 rounded-full font-medium text-sm flex items-center">
-                      <Calendar size={16} className="mr-2" />
-                      {item.date}
+                <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-6">
+                  <div className="mb-4 md:mb-0">
+                    <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">
+                      {exp.title}
+                    </h3>
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-2 text-slate-600 dark:text-slate-400">
+                      <span className="font-semibold text-blue-600 dark:text-blue-400">
+                        {exp.company}
+                      </span>
+                      <span className="hidden sm:block">•</span>
+                      <div className="flex items-center gap-1">
+                        <MapPin size={16} />
+                        {exp.location}
+                      </div>
+                      <span className="hidden sm:block">•</span>
+                      <span className="px-2 py-1 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 rounded-full text-xs font-medium">
+                        {exp.type}
+                      </span>
                     </div>
                   </div>
+                  
+                  <div className="flex items-center gap-2 text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-800 px-4 py-2 rounded-lg">
+                    <Calendar size={16} />
+                    <span className="font-medium">{exp.period}</span>
+                  </div>
+                </div>
 
-                  {/* Content */}
-                  <div
-                    className={`md:w-5/12 mb-8 md:mb-32 ${
-                      index % 2 === 0 ? 'md:text-right' : ''
-                    }`}
-                  >
-                    <div
-                      className={`bg-white dark:bg-slate-700 p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow ${
-                        item.type === 'work'
-                          ? 'border-l-4 border-blue-600 dark:border-blue-500'
-                          : 'border-l-4 border-indigo-600 dark:border-indigo-500'
-                      }`}
-                    >
-                      <div className="flex items-center mb-4">
-                        <div
-                          className={`p-2 rounded-lg mr-4 ${
-                            item.type === 'work'
-                              ? 'bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400'
-                              : 'bg-indigo-100 dark:bg-indigo-900/40 text-indigo-600 dark:text-indigo-400'
-                          }`}
-                        >
-                          {item.type === 'work' ? (
-                            <Briefcase size={20} />
-                          ) : (
-                            <GraduationCap size={20} />
-                          )}
-                        </div>
-                        <div>
-                          <h3 className="text-xl font-bold text-slate-900 dark:text-white">
-                            {item.title}
-                          </h3>
-                          <p className="text-slate-600 dark:text-slate-400">
-                            {item.type === 'work'
-                              ? item.company
-                              : item.institution}{' '}
-                            • {item.location}
-                          </p>
-                        </div>
-                      </div>
-
-                      {/* Date (desktop only) */}
-                      <div className="hidden md:block mb-4">
-                        <span className="inline-block bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400 px-3 py-1 rounded-full text-sm font-medium">
-                          {item.date}
+                <div className="mb-6">
+                  <h4 className="font-semibold text-slate-900 dark:text-white mb-3">Key Achievements</h4>
+                  <ul className="space-y-3">
+                    {exp.highlights.map((highlight, highlightIndex) => (
+                      <li key={highlightIndex} className="flex items-start gap-3">
+                        <div className="w-2 h-2 bg-blue-600 dark:bg-blue-400 rounded-full mt-2 flex-shrink-0"></div>
+                        <span className="text-slate-600 dark:text-slate-400 leading-relaxed">
+                          {highlight}
                         </span>
-                      </div>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
 
-                      <ul className="space-y-2 text-slate-700 dark:text-slate-300">
-                        {item.description.map((desc, i) => (
-                          <li key={i} className="flex items-start">
-                            <span className="text-blue-600 dark:text-blue-400 mr-2">
-                              •
-                            </span>
-                            <span>{desc}</span>
-                          </li>
-                        ))}
-                      </ul>
-
-                      {item.technologies && (
-                        <div className="mt-4 flex flex-wrap gap-2">
-                          {item.technologies.map((tech, i) => (
-                            <span
-                              key={i}
-                              className="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-full text-xs font-medium"
-                            >
-                              {tech}
-                            </span>
-                          ))}
-                        </div>
-                      )}
-                    </div>
+                <div>
+                  <h4 className="font-semibold text-slate-900 dark:text-white mb-3">Technologies</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {exp.technologies.map((tech, techIndex) => (
+                      <span
+                        key={techIndex}
+                        className="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-full text-sm font-medium"
+                      >
+                        {tech}
+                      </span>
+                    ))}
                   </div>
-
-                  {/* Spacer for alternating layout (desktop only) */}
-                  <div className="hidden md:block md:w-5/12"></div>
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* Career Progression Summary */}
+          <div className="mt-16 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-2xl p-8">
+            <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4 text-center">
+              Career Progression
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+              <div>
+                <div className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-2">2019-2021</div>
+                <div className="font-semibold text-slate-900 dark:text-white mb-1">Foundation</div>
+                <div className="text-sm text-slate-600 dark:text-slate-400">
+                  Built core frontend skills and full-stack understanding
+                </div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold text-indigo-600 dark:text-indigo-400 mb-2">2021-2023</div>
+                <div className="font-semibold text-slate-900 dark:text-white mb-1">Growth</div>
+                <div className="text-sm text-slate-600 dark:text-slate-400">
+                  Advanced to complex enterprise applications and modern frameworks
+                </div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold text-purple-600 dark:text-purple-400 mb-2">2023-Present</div>
+                <div className="font-semibold text-slate-900 dark:text-white mb-1">Leadership</div>
+                <div className="text-sm text-slate-600 dark:text-slate-400">
+                  Senior role with architecture decisions and AI integration focus
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
